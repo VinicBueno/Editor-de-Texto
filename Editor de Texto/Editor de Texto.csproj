@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +79,48 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\abrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\centralizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\colar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\direita.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\esqueda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\fonte.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\italico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\justificado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\negrito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\sublinhado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\coalr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\copiar.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

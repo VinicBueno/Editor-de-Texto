@@ -1,0 +1,10 @@
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\bin\Debug\Editor de Texto.exe.config
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\bin\Debug\Editor de Texto.exe
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\bin\Debug\Editor de Texto.pdb
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\obj\Debug\Editor de Texto.csprojAssemblyReference.cache
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\obj\Debug\Editor_de_Texto.Form1.resources
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\obj\Debug\Editor_de_Texto.Properties.Resources.resources
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\obj\Debug\Editor de Texto.csproj.GenerateResource.cache
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\obj\Debug\Editor de Texto.csproj.CoreCompileInputs.cache
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\obj\Debug\Editor de Texto.exe
+C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\obj\Debug\Editor de Texto.pdb
