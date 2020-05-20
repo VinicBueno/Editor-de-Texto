@@ -62,5 +62,42 @@ namespace Editor_de_Texto
         {
             Salvar();
         }
+        private void Abrir()
+        {
+            openFileDialog1.InitialDirectory = @"C:\Users\cliente\Documents\MyProjects\Editor-de-Texto\Editor de Texto\files";
+            openFileDialog1.Filter = "(*.VIN)|*VIN";
+            DialogResult dr = this.openFileDialog1.ShowDialog();
+            if(dr == System.Windows.Forms.DialogResult.OK)
+            {
+                try
+                {
+                    FileStream arquivo = new FileStream(openFileDialog1.FileName, FileMode.Open, FileAccess.Read);
+                    StreamReader vin_streamReader = new StreamReader(arquivo);
+                    vin_streamReader.BaseStream.Seek(0, SeekOrigin.Begin);
+                    this.richTextBox1.Text = "";
+                    string linha = vin_streamReader.ReadLine();
+                    while(linha != null)
+                    {
+                        this.richTextBox1.Text += linha + "\n";
+                        linha = vin_streamReader.ReadLine();
+                    }
+                    vin_streamReader.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro de leitura: " + ex.Message, "Erro ao ler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Abrir();
+        }
+
+        private void btn_abrir_Click(object sender, EventArgs e)
+        {
+            Abrir();
+        }
     }
 }
