@@ -13,7 +13,7 @@ namespace Editor_de_Texto
 {
     public partial class Form1 : Form
     {
-        StreamReader leitura = null;
+        StringReader leitura = null;
         public Form1()
         {
             InitializeComponent();
@@ -301,6 +301,81 @@ namespace Editor_de_Texto
         private void sublinhadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Sublinhar();
+        }
+        private void btn_esquerda_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void esquerdaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Left;
+        }
+
+        private void btn_centralizado_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void centralizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Center;
+        }
+
+        private void btn_direita_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void direitaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            richTextBox1.SelectionAlignment = HorizontalAlignment.Right;
+        }
+
+        private void imprimirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            printDialog1.Document = printDocument1;
+            leitura = new StringReader(richTextBox1.Text);
+            if(printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                this.printDocument1.Print();
+            }
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            int cont = 0;
+            float linhaPaginas = 0, PosY = 0;
+            float MargemEsquerda = e.MarginBounds.Left - 50, MargemSuperior = e.MarginBounds.Top - 50;
+            if (MargemEsquerda < 5)
+            {
+                MargemEsquerda = 20;
+            }
+            if(MargemSuperior < 5)
+            {
+                MargemSuperior = 20;
+            }
+            string linha = null;
+            Font fonte = this.richTextBox1.Font;
+            SolidBrush pincel = new SolidBrush(Color.Black);
+            linhaPaginas = e.MarginBounds.Height / fonte.GetHeight(e.Graphics);
+            linha = leitura.ReadLine();
+            while(cont< linhaPaginas)
+            {
+                PosY = MargemSuperior + (cont * fonte.GetHeight(e.Graphics));
+                e.Graphics.DrawString(linha, fonte, pincel, MargemEsquerda, PosY, new StringFormat());
+                cont++;
+                linha = leitura.ReadLine();
+            }
+            if (linha != null)
+            {
+                e.HasMorePages = true;
+            }
+            else 
+            {
+                e.HasMorePages = false;
+            }
+            pincel.Dispose();
         }
     }
 }
